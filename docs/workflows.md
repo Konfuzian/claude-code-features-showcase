@@ -2,44 +2,142 @@
 
 Proven patterns for effective Claude Code usage.
 
-## Feature Development Workflow
+## Feature Development Workflow (Spec-Driven)
 
-### 1. Planning Phase
-```
-User: Add user authentication feature
-Claude: Creates todo list and plans implementation
+This project follows a **spec-driven development workflow** where specifications are written before implementation.
+
+### 1. Write the Specification
+**Location:** `specs/planned/feature-name.md`
+
+```markdown
+# Feature Name Specification
+
+**Status**: 📝 Planned
+**Version**: 1.0
+**Last Updated**: YYYY-MM-DD
+
+## Overview
+Brief description of what the feature does
+
+## Purpose
+Why this feature exists and what problems it solves
+
+## Features
+### Core Functionality
+- List of key capabilities
+
+### Error Handling
+- How errors are handled
+
+## API
+Document the intended API surface
+
+## Implementation Details
+### Dependencies
+List required libraries and tools
+
+### Design Decisions
+Explain key architectural choices
+
+## Testing
+What needs to be tested
+
+## Usage Examples
+Show how it will be used
+
+## Future Enhancements
+Ideas for later improvements
 ```
 
 **Best practices:**
-- Break down into small tasks
-- Use TodoWrite to track progress
-- Identify dependencies early
+- Write specs in `specs/planned/` first
+- Include API design and examples
+- Document why decisions are made
+- Keep specs concise but thorough
+- Use TodoWrite to track spec writing
 
-### 2. Implementation Phase
+### 2. Implement the Code
+**Location:** `src/feature_name/`
+
 ```
+- Read the spec to understand requirements
 - Read existing code to understand patterns
-- Write new code following conventions
-- Add tests as you go
-- Update documentation
+- Write implementation following conventions
+- Keep code simple and focused
+- Add inline comments for complex logic
 ```
 
 **Best practices:**
+- Follow the spec's API design
+- Implement one function/method at a time
 - Commit after each logical step
-- Run tests frequently
-- Keep changes focused
+- Keep changes focused and atomic
 
-### 3. Review Phase
+### 3. Write Tests
+**Location:** `tests/test_feature_name.py`
+
 ```
-- Use /analyze command for quality check
-- Review test coverage
-- Check for security issues
-- Verify documentation
+- Test all functions/methods from the spec
+- Cover happy path cases
+- Cover error cases
+- Test edge cases
+- Use fixtures for test data
 ```
 
 **Best practices:**
+- Run tests after each implementation step
+- Aim for comprehensive coverage
+- Use descriptive test names
+- Keep tests simple and readable
+
+### 4. Verify & Document
+```
 - Run full test suite
+- Verify all spec requirements are met
+- Move spec from planned/ to implemented/
+- Update spec status to ✅ Implemented
+- Update CHANGELOG.md
+- Commit the completed feature
+```
+
+**Best practices:**
+- Use `/analyze` for quality check
 - Use code review skill
 - Check git diff before committing
+- Write clear commit message
+
+### Example End-to-End Flow
+
+```
+User: Add JSON file reader feature
+
+1. Write spec:
+   - Create specs/planned/json-reader.md
+   - Document API: read_json(), parse_json()
+   - Include usage examples
+   - Commit: "Add JSON reader specification"
+
+2. Implement code:
+   - Create src/json_reader/__init__.py
+   - Create src/json_reader/reader.py
+   - Implement read_json() function
+   - Commit: "Implement JSON reader core functionality"
+
+3. Write tests:
+   - Create tests/test_json_reader.py
+   - Add happy path tests
+   - Add error handling tests
+   - Create test fixtures
+   - Run: task test
+   - Commit: "Add JSON reader tests"
+
+4. Finalize:
+   - Move specs/planned/json-reader.md → specs/implemented/
+   - Update status to ✅ Implemented
+   - Update CHANGELOG.md
+   - Run full test suite
+   - Commit: "Complete JSON reader feature"
+```
 
 ## Bug Fix Workflow
 
