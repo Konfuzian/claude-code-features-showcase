@@ -19,6 +19,7 @@ This project is organized as a monorepo with three main areas:
 - [.claude/](.claude/) - Claude Code configuration (commands, skills, hooks)
 - [docs/](docs/) - Guides for models, workflows, context management
 - [specs/](specs/) - Feature specifications (implemented & planned)
+- [examples/](examples/) - **Real-world workflow examples** (How to work with Claude on this project)
 - [CLAUDE.md](CLAUDE.md) - Project context for Claude
 
 ### Applications
@@ -63,3 +64,16 @@ Visit:
 - Frontend: http://localhost:8080
 - Backend API: http://localhost:8000
 - API Docs: http://localhost:8000/docs
+
+## Learning Resources
+
+### Start Here: [Workflow Examples](examples/)
+
+Learn how to work with Claude on this project through real-world examples:
+
+- **[Spec-Driven Development](examples/01-spec-driven-development/)** - Build complex features (e.g., PDF reader)
+- **[Fix Security Issues](examples/02-fix-security-issue/)** - Fix critical bugs (e.g., CORS config)
+- **[Add Features](examples/03-add-feature/)** - Quick feature additions (e.g., new endpoints)
+- **[Refactoring](examples/04-refactoring/)** - Improve code quality (e.g., remove duplication)
+
+Each example includes step-by-step workflows, prompts, and best practices.
