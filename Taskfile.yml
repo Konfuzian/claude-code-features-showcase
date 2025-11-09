@@ -11,9 +11,9 @@ tasks:
       - uv run pytest tests/ -v
 
   test:watch:
-    desc: Run tests in watch mode (requires pytest-watch)
+    desc: Run tests in watch mode (requires pytest-watcher)
     cmds:
-      - uv run ptw tests/ -- -v
+      - uv run ptw -- tests/ -v
 
   test:coverage:
     desc: Run tests with coverage report
