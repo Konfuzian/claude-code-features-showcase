@@ -77,12 +77,14 @@ def extract_sheets(file_path: str | Path) -> List[Dict[str, Any]]:
                 if any(cell is not None for cell in row):
                     data.append(list(row))
 
-            sheets.append({
-                "name": sheet_name,
-                "rows": len(data),
-                "columns": len(data[0]) if data else 0,
-                "data": data,
-            })
+            sheets.append(
+                {
+                    "name": sheet_name,
+                    "rows": len(data),
+                    "columns": len(data[0]) if data else 0,
+                    "data": data,
+                }
+            )
 
         return sheets
     except Exception as e:

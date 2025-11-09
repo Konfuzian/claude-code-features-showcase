@@ -64,11 +64,13 @@ def extract_text_by_page(file_path: str | Path) -> List[Dict[str, any]]:
 
         for page_num, page in enumerate(reader.pages, start=1):
             text = page.extract_text()
-            pages.append({
-                "page": page_num,
-                "text": text,
-                "char_count": len(text),
-            })
+            pages.append(
+                {
+                    "page": page_num,
+                    "text": text,
+                    "char_count": len(text),
+                }
+            )
 
         return pages
     except Exception as e:

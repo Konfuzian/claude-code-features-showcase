@@ -117,7 +117,9 @@ class TestExtractSheets:
         # Format output for approval
         output = []
         for sheet in sheets:
-            output.append(f"=== {sheet['name']} ({sheet['rows']} rows, {sheet['columns']} cols) ===")
+            output.append(
+                f"=== {sheet['name']} ({sheet['rows']} rows, {sheet['columns']} cols) ==="
+            )
             for row in sheet["data"]:
                 output.append(str(row))
             output.append("")

@@ -22,6 +22,9 @@ All notable changes to this project will be documented in this file.
 - Added example hooks:
   - `pre-commit.sh` - Pre-commit validation (updated for markdown)
   - `README.md` - Hook documentation
+  - `hooks.json` - PostToolUse hooks for automatic formatting
+  - `format-file.sh` - Auto-formats Python, Markdown, JSON, YAML
+  - `hooks-guide.md` - Documentation for formatting hooks
 - Created comprehensive documentation:
   - `docs/models.md` - Model selection guide
   - `docs/file-formats.md` - .md vs .yml guidance
@@ -44,6 +47,10 @@ All notable changes to this project will be documented in this file.
   - `task test` - Run pytest suite
   - `task test:watch` - Watch mode with pytest-watcher
   - `task test:coverage` - Coverage reporting
+- Added automatic code formatting:
+  - ruff for Python formatting and linting
+  - PostToolUse hooks for automatic formatting after edits
+  - Support for Python, Markdown, JSON, YAML
 
 #### Changed
 - Restructured README.md with proper markdown hierarchy
