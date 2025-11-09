@@ -130,21 +130,22 @@ to reduce duplication.
 
 ## Useful Commands
 
-### Custom Slash Commands
+### Slash Commands
 
 | Command | Purpose | When to Use |
 |---------|---------|-------------|
-| `/analyze` | Code quality analysis | Before refactoring, periodic reviews |
-| `/test` | Generate tests | After implementing features |
-| `/refactor` | Code refactoring | When code works but is messy |
-| `/docs` | Generate documentation | For public APIs and complex code |
-| `/commit` | Auto-generate commit | After completing any work |
+| `/x-analyze` | Code quality analysis | Before refactoring, periodic reviews |
+| `/x-test` | Generate tests | After implementing features |
+| `/x-refactor` | Code refactoring | When code works but is messy |
+| `/x-docs` | Generate documentation | For public APIs and complex code |
+| `/x-commit` | Auto-generate commit | After completing any work |
+| `/x-test-coverage` | Coverage analysis | To identify testing gaps |
 
 ### Task Commands
 
 ```bash
 # Testing
-task test              # Run all 91 tests
+task test              # Run all tests
 task test:pdf          # Run PDF reader tests
 task test:xlsx         # Run XLSX reader tests
 task test:backend      # Run backend tests

@@ -47,7 +47,7 @@ This is a **monorepo** organized into AI-focused docs, applications, and shared 
 ├── .claude/                   # AI: Claude Code configuration
 │   ├── commands/             # Custom slash commands
 │   ├── skills/               # Reusable skills
-│   ├── agents/               # Specialized subagents
+│   ├── agents/               # Specialized agents
 │   └── hooks/                # Event-driven automation
 │
 ├── docs/                      # AI: Documentation for Claude
@@ -113,7 +113,7 @@ Event-driven automation that responds to specific actions. Configured in [.claud
 [→ Hook documentation](.claude/hooks/README.md) | [→ Usage guides](examples/usage-guides/hooks/)
 
 ### Agents
-Specialized subagents for complex autonomous tasks. Stored in [.claude/agents/](.claude/agents/).
+Specialized agents for complex autonomous tasks. Stored in [.claude/agents/](.claude/agents/).
 
 **Available agents:**
 - [test-coverage-auditor](.claude/agents/test-coverage-auditor.md) - Comprehensive coverage analysis
@@ -121,7 +121,7 @@ Specialized subagents for complex autonomous tasks. Stored in [.claude/agents/](
 ### MCP Servers
 Model Context Protocol servers that provide additional tools and context to Claude.
 
-[→ MCP configuration](.claude/mcp-servers/) (if configured)
+(MCP server integration can be configured via Claude Code settings)
 
 ### Context Management
 Strategies for efficient token usage and maintaining relevant context throughout sessions.

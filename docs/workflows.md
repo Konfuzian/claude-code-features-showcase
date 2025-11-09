@@ -270,6 +270,8 @@ Claude: Identifies improvement opportunities
 
 ## Context Management Workflow
 
+See [Context Management Guide](context-management.md) for comprehensive strategies.
+
 ### Managing Large Codebases
 
 **Use agents for exploration:**

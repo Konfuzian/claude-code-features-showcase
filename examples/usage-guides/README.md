@@ -20,6 +20,9 @@ Quick reference for commands, skills, hooks, and workflows.
 - [Pre-commit](./hooks/pre-commit-hook.md) - Validate before commits
 - [Format](./hooks/format-hook.md) - Auto-format on edits
 
+## Agents
+- [test-coverage-auditor](./agents/test-coverage-auditor.md) - Coverage analysis
+
 ## Advanced
 - [Command Chaining](./advanced-workflows/command-chaining.md) - Multi-step workflows
 - [Skill Combinations](./advanced-workflows/skill-combinations.md) - Using skills together

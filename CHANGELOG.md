@@ -9,27 +9,30 @@ All notable changes to this project will be documented in this file.
 #### Added
 - Created CLAUDE.md with project context and development guidelines
 - Created `.claude/` directory structure (commands, skills, hooks)
-- Added example slash commands:
-  - `analyze.md` - Code quality analysis
-  - `docs.md` - Documentation generation
-  - `test.md` - Test generation
-  - `refactor.md` - Code refactoring
-- Added example skills:
-  - `code-reviewer.md` - Code review skill
-  - `test-generator.md` - Test generation skill
-  - `pdf-reader.md` - PDF text extraction skill
-  - `xlsx-reader.md` - Excel/XLSX reading skill
+- Added slash commands:
+  - `x-analyze.md` - Code quality analysis
+  - `x-docs.md` - Documentation generation
+  - `x-test.md` - Test generation
+  - `x-refactor.md` - Code refactoring
+  - `x-commit.md` - Auto-commit with generated messages
+  - `x-test-coverage.md` - Test coverage analysis
+- Added skills:
+  - `x-code-reviewer/` - Code review skill
+  - `x-test-generator/` - Test generation skill
+  - `x-pdf-reader/` - PDF text extraction skill
+  - `x-xlsx-reader/` - Excel/XLSX reading skill
 - Added example hooks:
   - `pre-commit.sh` - Pre-commit validation (updated for markdown)
   - `README.md` - Hook documentation
   - `hooks.json` - PostToolUse hooks for automatic formatting
   - `format-file.sh` - Auto-formats Python, Markdown, JSON, YAML
-  - `hooks-guide.md` - Documentation for formatting hooks
+  - `.claude/hooks/README.md` - Hooks documentation
 - Created comprehensive documentation:
   - `docs/models.md` - Model selection guide
   - `docs/file-formats.md` - .md vs .yml guidance
   - `docs/workflows.md` - Common development patterns
   - `docs/context-management.md` - Token usage strategies
+  - `docs/code-style.md` - Code style & guidelines
 - Implemented PDF reader functionality:
   - Python project setup with uv package manager
   - `pyproject.toml` with dependencies (pypdf)

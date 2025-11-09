@@ -154,16 +154,21 @@ Provides actionable feedback with file locations.
 ### Slash Commands → `.md`
 ```
 .claude/commands/
-├── analyze.md
-├── test.md
-└── refactor.md
+├── x-analyze.md
+├── x-test.md
+├── x-docs.md
+├── x-refactor.md
+├── x-commit.md
+└── x-test-coverage.md
 ```
 
 ### Skills → `.md`
 ```
 .claude/skills/
-├── code-reviewer.md
-└── test-generator.md
+├── x-code-reviewer/
+├── x-test-generator/
+├── x-pdf-reader/
+└── x-xlsx-reader/
 ```
 
 ### Agents → `.yml`
