@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file.
   - `code-reviewer.md` - Code review skill
   - `test-generator.md` - Test generation skill
   - `pdf-reader.md` - PDF text extraction skill
+  - `xlsx-reader.md` - Excel/XLSX reading skill
 - Added example hooks:
   - `pre-commit.sh` - Pre-commit validation (updated for markdown)
   - `README.md` - Hook documentation
@@ -33,6 +34,16 @@ All notable changes to this project will be documented in this file.
   - `tests/` with pytest and approval tests
   - Sample PDF fixture for testing
   - `.gitignore` for Python/testing artifacts
+- Implemented XLSX reader functionality:
+  - `src/xlsx_reader/` module with Excel data extraction
+  - Support for multiple sheets with metadata
+  - `tests/test_xlsx_reader.py` with 10 comprehensive tests
+  - Sample Excel fixture with employee, project, and summary data
+  - openpyxl dependency added
+- Added Taskfile.yml with test automation:
+  - `task test` - Run pytest suite
+  - `task test:watch` - Watch mode with pytest-watcher
+  - `task test:coverage` - Coverage reporting
 
 #### Changed
 - Restructured README.md with proper markdown hierarchy

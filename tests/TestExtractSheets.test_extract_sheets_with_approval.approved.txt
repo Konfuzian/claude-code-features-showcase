@@ -1,0 +1,18 @@
+=== Employees (5 rows, 5 cols) ===
+['ID', 'Name', 'Department', 'Salary', 'Start Date']
+[1, 'Alice Smith', 'Engineering', 95000, datetime.datetime(2020, 3, 15, 0, 0)]
+[2, 'Bob Johnson', 'Marketing', 75000, datetime.datetime(2021, 6, 1, 0, 0)]
+[3, 'Carol Williams', 'Engineering', 102000, datetime.datetime(2019, 1, 10, 0, 0)]
+[4, 'David Brown', 'Sales', 68000, datetime.datetime(2022, 9, 5, 0, 0)]
+
+=== Projects (4 rows, 4 cols) ===
+['Project', 'Lead', 'Status', 'Budget']
+['Web Redesign', 'Alice Smith', 'In Progress', 50000]
+['Mobile App', 'Carol Williams', 'Planning', 120000]
+['Marketing Campaign', 'Bob Johnson', 'Completed', 35000]
+
+=== Summary (4 rows, 2 cols) ===
+['Metric', 'Value']
+['Total Employees', 4]
+['Active Projects', 3]
+['Total Budget', 205000]
