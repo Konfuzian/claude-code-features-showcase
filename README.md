@@ -43,10 +43,11 @@ This project is organized as a monorepo with three main areas:
 
 ### Run Tests
 ```bash
-task test              # Run all 40 tests
+task test              # Run all 91 tests
 task test:pdf          # Run PDF reader tests only
 task test:xlsx         # Run XLSX reader tests only
-task backend:test      # Run backend tests only
+task test:backend      # Run backend tests only
+task test:frontend     # Run frontend HTML validation tests only
 ```
 
 ### Run Applications

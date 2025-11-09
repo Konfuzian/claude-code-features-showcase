@@ -7,48 +7,53 @@ tasks:
 
   # Test tasks
   test:
-    desc: Run all tests (packages and backend - no frontend tests needed for static HTML)
+    desc: Run all tests (packages, backend, and frontend)
     cmds:
-      - uv run pytest packages/pdf-reader/tests/ packages/xlsx-reader/tests/ apps/backend/tests/ -v
+      - $HOME/.local/bin/uv run pytest packages/pdf-reader/tests/ packages/xlsx-reader/tests/ apps/backend/tests/ apps/frontend/tests/ -v
 
   test:short:
     desc: Run all tests with short traceback (useful for CI/CD)
     cmds:
-      - uv run pytest packages/pdf-reader/tests/ packages/xlsx-reader/tests/ apps/backend/tests/ -v --tb=short
+      - $HOME/.local/bin/uv run pytest packages/pdf-reader/tests/ packages/xlsx-reader/tests/ apps/backend/tests/ apps/frontend/tests/ -v --tb=short
 
   test:watch:
     desc: Run Python tests in watch mode
     cmds:
-      - uv run ptw -- packages/pdf-reader/tests/ packages/xlsx-reader/tests/ apps/backend/tests/ -v
+      - $HOME/.local/bin/uv run ptw -- packages/pdf-reader/tests/ packages/xlsx-reader/tests/ apps/backend/tests/ apps/frontend/tests/ -v
 
   test:coverage:
     desc: Run tests with coverage report
     cmds:
-      - uv run pytest packages/*/tests/ apps/backend/tests/ -v --cov=packages --cov=apps/backend --cov-report=html --cov-report=term
+      - $HOME/.local/bin/uv run pytest packages/*/tests/ apps/backend/tests/ apps/frontend/tests/ -v --cov=packages --cov=apps/backend --cov-report=html --cov-report=term
 
   # Individual package tests
   test:pdf:
     desc: Run PDF reader tests only
     cmds:
-      - uv run pytest packages/pdf-reader/tests/ -v
+      - $HOME/.local/bin/uv run pytest packages/pdf-reader/tests/ -v
 
   test:xlsx:
     desc: Run XLSX reader tests only
     cmds:
-      - uv run pytest packages/xlsx-reader/tests/ -v
+      - $HOME/.local/bin/uv run pytest packages/xlsx-reader/tests/ -v
+
+  test:frontend:
+    desc: Run frontend HTML validation tests only
+    cmds:
+      - $HOME/.local/bin/uv run pytest apps/frontend/tests/ -v
+
+  test:backend:
+    desc: Run backend tests only
+    dir: apps/backend
+    cmds:
+      - $HOME/.local/bin/uv run pytest -v
 
   # Backend tasks
   backend:dev:
     desc: Run backend dev server with auto-reload
     dir: apps/backend
     cmds:
-      - uv run uvicorn backend.main:app --reload
-
-  backend:test:
-    desc: Run backend tests
-    dir: apps/backend
-    cmds:
-      - uv run pytest -v
+      - $HOME/.local/bin/uv run uvicorn backend.main:app --reload
 
   # Frontend tasks (static HTML)
   frontend:dev:

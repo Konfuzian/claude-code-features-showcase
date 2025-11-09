@@ -40,6 +40,24 @@ Then open http://localhost:8080 in your browser.
 - **Tailwind CSS v3**: https://cdn.tailwindcss.com
 - **Datastar**: https://cdn.jsdelivr.net/npm/@sudodevnull/datastar
 
+## Testing
+
+The frontend has comprehensive HTML validation tests (51 tests):
+
+```bash
+task test:frontend     # Run frontend tests only
+task test              # Run all tests (including frontend)
+```
+
+Tests validate:
+- HTML structure and syntax
+- Required meta tags and CDN includes
+- Navigation consistency across pages
+- Interactive Datastar components
+- Tailwind CSS classes
+- No inline scripts (security)
+- Responsive design elements
+
 ## Deployment
 
 Simply copy the HTML files to any static hosting:
