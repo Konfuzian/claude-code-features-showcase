@@ -1,8 +1,8 @@
 [tool.uv.workspace]
-members = ["packages/*"]
+members = ["packages/*", "apps/*"]
 
 [tool.pytest.ini_options]
-testpaths = ["packages/*/tests"]
+testpaths = ["packages/*/tests", "apps/*/tests"]
 python_files = "test_*.py"
 python_classes = "Test*"
 python_functions = "test_*"

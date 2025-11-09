@@ -8,6 +8,8 @@ resolution-markers = [
 
 [manifest]
 members = [
+    "backend",
+    "frontend",
     "pdf-reader",
     "xlsx-reader",
 ]
@@ -57,6 +59,21 @@ sdist = { url = "https://files.pythonhosted.org/packages/53/af/8b51b58f99356052f
 wheels = [
     { url = "https://files.pythonhosted.org/packages/1b/5b/7998c7425b6bd484a4900676d959edc7b131e7be8b4de8c0cce886b392fe/approvaltests-15.3.2-py3-none-any.whl", hash = "sha256:ac9e2da587b1f1c3f72b1199afd8d03ea651fd7855de389b167988bc9a97e1fa", size = 79868, upload-time = "2025-08-31T19:17:42.237Z" },
 ]
+
+[[package]]
+name = "backend"
+version = "0.1.0"
+source = { editable = "apps/backend" }
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+]
+
+[package.metadata]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=8.0.0" }]
 
 [[package]]
 name = "beautifulsoup4"
@@ -210,6 +227,21 @@ sdist = { url = "https://files.pythonhosted.org/packages/0b/9f/a65090624ecf468cd
 wheels = [
     { url = "https://files.pythonhosted.org/packages/36/f4/c6e662dade71f56cd2f3735141b265c3c79293c109549c1e6933b0651ffc/exceptiongroup-1.3.0-py3-none-any.whl", hash = "sha256:4d111e6e0c13d0644cad6ddaa7ed0261a0b36971f6d23e7ec9b4b9097da78a10", size = 16674, upload-time = "2025-05-10T17:42:49.33Z" },
 ]
+
+[[package]]
+name = "frontend"
+version = "0.1.0"
+source = { editable = "apps/frontend" }
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+]
+
+[package.metadata]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=8.0.0" }]
 
 [[package]]
 name = "idna"

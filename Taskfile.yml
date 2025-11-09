@@ -6,10 +6,12 @@ tasks:
   default: task --list
 
   test:
-    desc: Run the test suite for all packages
+    desc: Run the test suite for all packages and apps
     cmds:
       - uv run pytest packages/pdf-reader/tests/ -v
       - uv run pytest packages/xlsx-reader/tests/ -v
+      - uv run pytest apps/backend/tests/ -v
+      - uv run pytest apps/frontend/tests/ -v
 
   test:watch:
     desc: Run tests in watch mode (requires pytest-watcher)
