@@ -1,4 +1,6 @@
-# Commit Command
+---
+description: Create a meaningful git commit for current changes
+---
 
 Create a meaningful git commit for current changes and commit them.
 

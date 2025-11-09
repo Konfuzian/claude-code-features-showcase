@@ -1,8 +1,8 @@
-# Test Coverage Command
+---
+description: Analyze test coverage across unit, integration, and end-to-end tests
+---
 
 Launches the test coverage auditor agent to perform comprehensive test coverage analysis.
-
-## Description
 
 Analyzes test coverage across unit, integration, and end-to-end tests. Identifies gaps in coverage, validates test quality, and ensures production readiness.
 
