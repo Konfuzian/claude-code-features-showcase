@@ -36,22 +36,39 @@ A comprehensive learning resource and playground for Claude Code features, inclu
 
 ## Project Structure
 
+This is a **monorepo** organized into AI-focused docs, applications, and shared packages:
+
 ```
 .
-├── CLAUDE.md                 # This file - project context
-├── README.md                 # User-facing documentation
-├── CHANGELOG.md              # Project history
-├── .claude/
-│   ├── commands/            # Custom slash commands
-│   ├── skills/              # Reusable skills
-│   ├── agents/              # Specialized subagents
-│   └── hooks/               # Event-driven automation
-├── docs/                    # Detailed documentation
-│   ├── models.md           # Model selection guide
-│   ├── file-formats.md     # .md vs .yml guidance
-│   ├── workflows.md        # Common patterns
+├── CLAUDE.md                  # This file - project context
+├── README.md                  # User-facing documentation
+├── CHANGELOG.md               # Project history
+│
+├── .claude/                   # AI: Claude Code configuration
+│   ├── commands/             # Custom slash commands
+│   ├── skills/               # Reusable skills
+│   ├── agents/               # Specialized subagents
+│   └── hooks/                # Event-driven automation
+│
+├── docs/                      # AI: Documentation for Claude
+│   ├── models.md             # Model selection guide
+│   ├── file-formats.md       # .md vs .yml guidance
+│   ├── workflows.md          # Common patterns
 │   └── context-management.md
-└── examples/               # Working examples
+│
+├── specs/                     # AI: Feature specifications
+│   ├── implemented/          # Completed features
+│   └── planned/              # Future features
+│
+├── apps/                      # Applications (deployable)
+│   ├── backend/              # Example: API server
+│   └── frontend/             # Example: Web UI
+│
+├── packages/                  # Shared libraries & tools
+│   ├── pdf-reader/           # PDF text extraction
+│   └── xlsx-reader/          # Excel data extraction
+│
+└── examples/                  # Working examples
 ```
 
 ## Key Concepts

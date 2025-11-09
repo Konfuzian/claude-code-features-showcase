@@ -11,23 +11,30 @@ A repository demonstrating advanced features of Claude Code. Built exclusively w
 - **Commit often** - Git commit after every meaningful step with succinct, meaningful messages
 - **Test often** - Run test suite after code changes to catch bugs early
 
-## Repository Contents
+## Monorepo Structure
 
-### Configuration & Structure
-- `CLAUDE.md` - Project context and guidelines
-- `.claude/commands/` - Custom slash commands
-- `.claude/skills/` - Reusable skills
-- `.claude/agents/` - Specialized subagents
-- `.claude/hooks/` - Event-driven automation
+This project is organized as a monorepo with three main areas:
 
-### Features & Concepts
-- **MCP servers** - Model Context Protocol integrations
-- **Tools** - Custom tooling and utilities
-- **Models** - When to use Sonnet, Haiku, or Opus
-- **File formats** - Guidance on `.md` vs `.yml` usage
-- **Structured markdown** - YAML frontmatter with hierarchical headings
-- **Context management** - Efficient token usage strategies
-- **Workflows** - Common development patterns
-- **Tests** - Test suites and testing strategies
-- **Specs** - Technical specifications
-- **Project documentation** - Comprehensive docs
+### AI-Focused Documentation
+- [.claude/](.claude/) - Claude Code configuration (commands, skills, hooks)
+- [docs/](docs/) - Guides for models, workflows, context management
+- [specs/](specs/) - Feature specifications (implemented & planned)
+- [CLAUDE.md](CLAUDE.md) - Project context for Claude
+
+### Applications
+- [apps/](apps/) - Deployable applications (backend, frontend, CLI)
+- Each app has its own src/, tests/, and configuration
+
+### Shared Packages
+- [packages/](packages/) - Reusable libraries and tools
+- [packages/pdf-reader/](packages/pdf-reader/) - PDF text extraction
+- [packages/xlsx-reader/](packages/xlsx-reader/) - Excel data extraction
+
+## Key Features
+
+- **Custom Commands** - Slash commands for common tasks (/analyze, /test, /refactor)
+- **Skills** - Reusable capabilities (code-reviewer, test-generator, pdf-reader, xlsx-reader)
+- **Hooks** - Automated formatting and validation
+- **Spec-Driven Development** - Write specs first, then implement
+- **Comprehensive Testing** - pytest with approval tests
+- **Monorepo Workflow** - Multiple packages, shared tooling
