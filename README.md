@@ -7,7 +7,7 @@ Always:
 - don't repeat yourself - if something already exists, don't repeat it in different words. this is very important to keep the complexity of this project as low as possible.
 - make it simple - don't use complicated wordings or overly complex or long sentences. it should be easy to understand and obvious what it does
 - describe - this repo should be a learning resource and a playground. describe what is what, why it exists, and how to use it
-- commit often - after every meaningful step, automatically git commit the changes
+- commit often - after every meaningful step, automatically git commit the changes. write succinct but meaningful commit messages
 - test often - try to run a test suite after code changes, to catch bugs and errors early on
 
 This repo will include:
