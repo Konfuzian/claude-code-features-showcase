@@ -12,6 +12,7 @@ ENV/
 
 # Testing
 .pytest_cache/
+.approval_tests_temp/
 *.received.txt
 htmlcov/
 .coverage
