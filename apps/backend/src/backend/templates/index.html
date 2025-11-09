@@ -21,7 +21,7 @@
 
         <!-- Main Content -->
         <main
-            data-on-load="$$get('/api/hello')"
+            data-on-load="$get('/api/hello')"
             data-store="{message: '', loading: true, error: null, timestamp: '', app: '', version: ''}"
         >
             <!-- Loading State -->
@@ -57,7 +57,7 @@
                 <!-- Refresh Button -->
                 <div class="text-center">
                     <button
-                        data-on-click="$$get('/api/hello')"
+                        data-on-click="$get('/api/hello')"
                         class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-200 ease-in-out transform hover:scale-105"
                     >
                         🔄 Refresh Message
@@ -68,16 +68,16 @@
             <!-- Health Status -->
             <div class="mt-8 bg-white rounded-lg shadow p-4">
                 <div
-                    data-on-load="$$get('/api/health')"
-                    data-store="{healthStatus: 'checking...', healthTime: ''}"
+                    data-on-load="$get('/api/health')"
+                    data-store="{status: 'checking...', timestamp: ''}"
                     class="flex items-center justify-between"
                 >
                     <div class="flex items-center">
                         <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
                         <span class="text-gray-700">Status: </span>
-                        <span class="font-semibold ml-1" data-text="$healthStatus"></span>
+                        <span class="font-semibold ml-1" data-text="$status"></span>
                     </div>
-                    <span class="text-sm text-gray-500" data-text="$healthTime"></span>
+                    <span class="text-sm text-gray-500" data-text="$timestamp"></span>
                 </div>
             </div>
         </main>
