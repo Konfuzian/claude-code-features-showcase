@@ -34,7 +34,7 @@ class TestIndexPage:
 
     def test_has_datastar_cdn(self, index_html):
         """Test that Datastar CDN is included."""
-        assert "@sudodevnull/datastar" in index_html
+        assert "starfederation/datastar" in index_html
 
     def test_has_navigation(self, index_html):
         """Test that navigation is present."""
@@ -105,7 +105,7 @@ class TestDemoPage:
 
     def test_has_datastar_cdn(self, demo_html):
         """Test that Datastar CDN is included."""
-        assert "@sudodevnull/datastar" in demo_html
+        assert "starfederation/datastar" in demo_html
 
     def test_has_todo_list_demo(self, demo_html):
         """Test that todo list demo is present."""
@@ -157,7 +157,7 @@ class TestAboutPage:
 
     def test_has_datastar_cdn(self, about_html):
         """Test that Datastar CDN is included."""
-        assert "@sudodevnull/datastar" in about_html
+        assert "starfederation/datastar" in about_html
 
     def test_has_overview_section(self, about_html):
         """Test that overview section is present."""
@@ -262,4 +262,4 @@ class TestHTMLValidation:
         for filename in html_files:
             content = (FRONTEND_DIR / filename).read_text()
             assert "cdn.tailwindcss.com" in content, f"Tailwind CDN missing in {filename}"
-            assert "@sudodevnull/datastar" in content, f"Datastar CDN missing in {filename}"
+            assert "starfederation/datastar" in content, f"Datastar CDN missing in {filename}"

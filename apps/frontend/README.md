@@ -38,25 +38,48 @@ Then open http://localhost:8080 in your browser.
 
 - **HTML5**: Semantic markup
 - **Tailwind CSS v3**: https://cdn.tailwindcss.com
-- **Datastar**: https://cdn.jsdelivr.net/npm/@sudodevnull/datastar
+- **Datastar**: https://cdn.jsdelivr.net/gh/starfederation/datastar@v1.0.0-beta.11
 
 ## Testing
 
-The frontend has comprehensive HTML validation tests (51 tests):
+The frontend has comprehensive test coverage (103 tests):
 
 ```bash
-task test:frontend     # Run frontend tests only
 task test              # Run all tests (including frontend)
 ```
 
-Tests validate:
+### Static HTML Tests (76 tests)
+Fast tests that validate structure and content:
 - HTML structure and syntax
 - Required meta tags and CDN includes
 - Navigation consistency across pages
 - Interactive Datastar components
 - Tailwind CSS classes
 - No inline scripts (security)
-- Responsive design elements
+
+### End-to-End Tests (27 tests)
+Browser-based tests using Playwright:
+- Interactive counter functionality
+- Todo list operations
+- Accordion toggle behavior
+- Form validation
+- Navigation between pages
+- Keyboard accessibility
+- Responsive design
+
+**E2E Setup:**
+```bash
+# Install browser dependencies (one-time)
+uv run playwright install-deps
+
+# Start dev server
+python3 -m http.server 8080
+
+# Run E2E tests
+uv run pytest apps/frontend/tests/test_e2e.py
+```
+
+See [tests/README.md](tests/README.md) for detailed testing documentation.
 
 ## Deployment
 

@@ -2,7 +2,7 @@
 members = ["packages/*", "apps/backend"]
 
 [tool.pytest.ini_options]
-testpaths = ["packages/*/tests", "apps/backend/tests"]
+testpaths = ["packages/*/tests", "apps/backend/tests", "apps/frontend/tests"]
 python_files = "test_*.py"
 python_classes = "Test*"
 python_functions = "test_*"
@@ -12,4 +12,6 @@ dev = [
     "pytest>=8.0.0",
     "pytest-watcher>=0.4.3",
     "ruff>=0.14.4",
+    "playwright>=1.40.0",
+    "pytest-playwright>=0.4.0",
 ]
