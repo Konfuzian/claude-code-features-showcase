@@ -1,3 +1,8 @@
+---
+name: test-generator
+description: Generates comprehensive test suites including unit tests, integration tests, edge cases, and mock data. Adapts to project testing frameworks (Jest, Pytest, JUnit, RSpec, Go). Use when creating tests for new functionality, improving test coverage, or generating test fixtures.
+---
+
 # Test Generator Skill
 
 Automatically generates comprehensive test suites for code.

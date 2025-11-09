@@ -1,3 +1,8 @@
+---
+name: code-reviewer
+description: Performs comprehensive code reviews checking for correctness, security vulnerabilities (injection, XSS), performance issues, readability, test coverage, and adherence to best practices. Use when reviewing pull requests, analyzing code quality, or auditing code changes.
+---
+
 # Code Reviewer Skill
 
 A specialized skill for performing thorough code reviews.

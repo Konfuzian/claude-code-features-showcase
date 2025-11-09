@@ -1,3 +1,9 @@
+---
+name: xlsx-reader
+description: Reads Excel workbooks (.xlsx), extracts data from all sheets, handles multiple data types (text, numbers, dates), and returns structured data. Uses Python with openpyxl library. Use when reading Excel spreadsheets, extracting workbook data, analyzing Excel files, or converting Excel to structured format.
+allowed-tools: [Bash, Read]
+---
+
 # XLSX Reader Skill
 
 Reads and extracts data from Excel (.xlsx) files.
