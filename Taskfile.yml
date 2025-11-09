@@ -22,6 +22,19 @@ tasks:
     cmds:
       - uv run pytest packages/*/tests/ apps/backend/tests/ -v --cov=packages --cov=apps/backend --cov-report=html --cov-report=term
 
+  # Backend tasks
+  backend:dev:
+    desc: Run backend dev server with auto-reload
+    dir: apps/backend
+    cmds:
+      - uv run uvicorn backend.main:app --reload
+
+  backend:test:
+    desc: Run backend tests
+    dir: apps/backend
+    cmds:
+      - uv run pytest -v
+
   # Frontend tasks (npm-based)
   frontend:install:
     desc: Install frontend dependencies
