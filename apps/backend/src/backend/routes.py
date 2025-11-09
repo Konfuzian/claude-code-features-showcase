@@ -1,35 +1,28 @@
 """API routes for the backend application."""
 
 from datetime import datetime, timezone
-from pathlib import Path
 
-from fastapi import APIRouter, Request
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
+from fastapi import APIRouter
 
 router = APIRouter()
 
-# Setup templates
-templates_dir = Path(__file__).parent / "templates"
-templates = Jinja2Templates(directory=str(templates_dir))
 
-
-@router.get("/", response_class=HTMLResponse)
-async def index(request: Request):
+@router.get("/")
+async def root():
     """
-    Serve the HTML frontend.
-
-    Args:
-        request: FastAPI request object
+    Root endpoint - API information.
 
     Returns:
-        HTMLResponse: Rendered HTML template
+        dict: API metadata and available endpoints
     """
-    return templates.TemplateResponse(
-        request=request,
-        name="index.html",
-        context={"title": "Hello World App"}
-    )
+    return {
+        "name": "Backend API",
+        "version": "0.1.0",
+        "endpoints": {
+            "health": "/api/health",
+            "hello": "/api/hello",
+        },
+    }
 
 
 @router.get("/api/hello")

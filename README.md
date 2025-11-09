@@ -23,7 +23,7 @@ This project is organized as a monorepo with three main areas:
 - [CLAUDE.md](CLAUDE.md) - Project context for Claude
 
 ### Applications
-- [apps/backend/](apps/backend/) - FastAPI REST API with Jinja2 templates
+- [apps/backend/](apps/backend/) - FastAPI REST API (pure API, no templates)
 - [apps/frontend/](apps/frontend/) - Static HTML with Tailwind CSS + Datastar (zero-build)
 
 ### Shared Packages
@@ -44,10 +44,10 @@ This project is organized as a monorepo with three main areas:
 
 ### Run Tests
 ```bash
-task test              # Run all 91 tests
+task test              # Run all 76 tests
 task test:pdf          # Run PDF reader tests only
 task test:xlsx         # Run XLSX reader tests only
-task test:backend      # Run backend tests only
+task test:backend      # Run backend API tests only
 task test:frontend     # Run frontend HTML validation tests only
 ```
 

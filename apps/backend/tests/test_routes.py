@@ -5,16 +5,18 @@ from fastapi.testclient import TestClient
 from backend.app import create_app
 
 
-def test_index_page():
-    """Test that index page renders HTML."""
+def test_root_endpoint():
+    """Test that root endpoint returns API information."""
     client = TestClient(create_app())
     response = client.get("/")
 
     assert response.status_code == 200
-    assert "text/html" in response.headers["content-type"]
-    assert "Hello World App" in response.text
-    assert "Tailwind" in response.text
-    assert "Datastar" in response.text
+    data = response.json()
+    assert data["name"] == "Backend API"
+    assert data["version"] == "0.1.0"
+    assert "endpoints" in data
+    assert data["endpoints"]["health"] == "/api/health"
+    assert data["endpoints"]["hello"] == "/api/hello"
 
 
 def test_api_hello():
