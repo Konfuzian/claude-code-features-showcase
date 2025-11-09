@@ -6,6 +6,10 @@ testpaths = ["packages/*/tests", "apps/backend/tests", "apps/frontend/tests"]
 python_files = "test_*.py"
 python_classes = "Test*"
 python_functions = "test_*"
+addopts = [
+    "--ignore=apps/frontend/tests/test_sanity.py",
+    "--ignore=apps/frontend/tests/test_e2e.py",
+]
 
 [dependency-groups]
 dev = [

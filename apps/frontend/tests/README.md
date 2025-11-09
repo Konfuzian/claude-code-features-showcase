@@ -126,7 +126,9 @@ uv run pytest apps/frontend/tests/test_e2e.py --screenshot on
 
 ## Test Coverage
 
-**Static HTML tests**: 76 tests covering structure and content
-**E2E tests**: 27 tests covering interactive functionality
+**Static HTML tests**: 51 tests covering structure and content
+**Sanity tests**: 9 tests covering basic browser functionality
+**E2E tests**: 27 tests covering comprehensive interactive functionality
 
-**Total**: 103 frontend tests
+**Total**: 87 frontend tests
+**Default suite**: 51 tests (static HTML only, no browser required)

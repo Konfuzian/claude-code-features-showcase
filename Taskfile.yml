@@ -45,10 +45,10 @@ tasks:
   test:e2e:
     desc: Run comprehensive E2E tests (requires browser dependencies and running server)
     cmds:
-      - echo "Make sure frontend server is running: task frontend:dev"
+      - echo "Make sure frontend server is running - task frontend:dev"
       - $HOME/.local/bin/uv run pytest apps/frontend/tests/ -v -m e2e
 
-  test:e2e:docker:
+  test:e2e-docker:
     desc: Run E2E tests in Docker with all dependencies
     cmds:
       - docker compose -f docker-compose.test.yml up --build --abort-on-container-exit
@@ -57,10 +57,10 @@ tasks:
   test:sanity:
     desc: Run quick sanity checks on frontend (requires running server)
     cmds:
-      - echo "Make sure frontend server is running: task frontend:dev"
+      - echo "Make sure frontend server is running - task frontend:dev"
       - $HOME/.local/bin/uv run pytest apps/frontend/tests/test_sanity.py -v
 
-  test:sanity:docker:
+  test:sanity-docker:
     desc: Run sanity tests in Docker (no system dependencies needed)
     cmds:
       - docker compose -f docker-compose.test.yml up --build --abort-on-container-exit
