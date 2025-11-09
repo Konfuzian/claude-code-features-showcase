@@ -6,19 +6,43 @@ tasks:
   default: task --list
 
   test:
-    desc: Run the test suite for all packages and apps
+    desc: Run all tests (Python packages and backend)
     cmds:
       - uv run pytest packages/pdf-reader/tests/ -v
       - uv run pytest packages/xlsx-reader/tests/ -v
       - uv run pytest apps/backend/tests/ -v
-      - uv run pytest apps/frontend/tests/ -v
 
   test:watch:
-    desc: Run tests in watch mode (requires pytest-watcher)
+    desc: Run Python tests in watch mode
     cmds:
-      - uv run ptw -- packages/pdf-reader/tests/ packages/xlsx-reader/tests/ -v
+      - uv run ptw -- packages/pdf-reader/tests/ packages/xlsx-reader/tests/ apps/backend/tests/ -v
 
   test:coverage:
     desc: Run tests with coverage report
     cmds:
-      - uv run pytest packages/*/tests/ -v --cov=packages --cov-report=html --cov-report=term
+      - uv run pytest packages/*/tests/ apps/backend/tests/ -v --cov=packages --cov=apps/backend --cov-report=html --cov-report=term
+
+  # Frontend tasks (npm-based)
+  frontend:install:
+    desc: Install frontend dependencies
+    dir: apps/frontend
+    cmds:
+      - npm install
+
+  frontend:dev:
+    desc: Run frontend dev server
+    dir: apps/frontend
+    cmds:
+      - npm run dev
+
+  frontend:build:
+    desc: Build frontend for production
+    dir: apps/frontend
+    cmds:
+      - npm run build
+
+  frontend:test:
+    desc: Run frontend tests
+    dir: apps/frontend
+    cmds:
+      - npm run test

@@ -4,18 +4,20 @@ This directory contains full application projects that can be deployed.
 
 ## Structure
 
-Each app has its own directory with complete source code, tests, and configuration:
+This directory contains both Python and JavaScript/TypeScript applications:
 
 ```
 apps/
-├── backend/              # API server application
-│   ├── src/
+├── backend/              # Python API server (uv)
+│   ├── src/backend/
 │   ├── tests/
 │   └── pyproject.toml
-└── frontend/             # Web UI application
+└── frontend/             # React web app (npm/vite)
     ├── src/
-    ├── tests/
-    └── package.json
+    ├── public/
+    ├── index.html
+    ├── package.json
+    └── vite.config.ts
 ```
 
 ## What Goes Here
@@ -68,11 +70,49 @@ apps/web/
 └── package.json
 ```
 
+## Current Apps
+
+### Backend (Python/uv)
+Python API server application.
+
+**Run tests:**
+```bash
+cd apps/backend
+uv run pytest -v
+```
+
+**Run application:**
+```bash
+cd apps/backend
+uv run python -m backend.main
+```
+
+### Frontend (React/Vite)
+React web application with TypeScript and Vite.
+
+**Install dependencies:**
+```bash
+task frontend:install
+# or: cd apps/frontend && npm install
+```
+
+**Run dev server:**
+```bash
+task frontend:dev
+# or: cd apps/frontend && npm run dev
+```
+
+**Build for production:**
+```bash
+task frontend:build
+# or: cd apps/frontend && npm run build
+```
+
 ## Dependencies
 
-Apps can depend on packages from `packages/`:
+Python apps can depend on packages from `packages/`:
 ```toml
-# apps/api/pyproject.toml
+# apps/backend/pyproject.toml
 [project]
 dependencies = [
     "pdf-reader",
