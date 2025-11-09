@@ -22,8 +22,8 @@ This project is organized as a monorepo with three main areas:
 - [CLAUDE.md](CLAUDE.md) - Project context for Claude
 
 ### Applications
-- [apps/](apps/) - Deployable applications (backend, frontend, CLI)
-- Each app has its own src/, tests/, and configuration
+- [apps/backend/](apps/backend/) - FastAPI REST API with Jinja2 templates
+- [apps/frontend/](apps/frontend/) - Static HTML with Tailwind CSS + Datastar (zero-build)
 
 ### Shared Packages
 - [packages/](packages/) - Reusable libraries and tools
@@ -38,3 +38,27 @@ This project is organized as a monorepo with three main areas:
 - **Spec-Driven Development** - Write specs first, then implement
 - **Comprehensive Testing** - pytest with approval tests
 - **Monorepo Workflow** - Multiple packages, shared tooling
+
+## Quick Start
+
+### Run Tests
+```bash
+task test              # Run all 40 tests
+task test:pdf          # Run PDF reader tests only
+task test:xlsx         # Run XLSX reader tests only
+task backend:test      # Run backend tests only
+```
+
+### Run Applications
+```bash
+# Backend API
+task backend:dev       # Start FastAPI server on port 8000
+
+# Frontend
+task frontend:dev      # Serve static HTML on port 8080
+```
+
+Visit:
+- Frontend: http://localhost:8080
+- Backend API: http://localhost:8000
+- API Docs: http://localhost:8000/docs

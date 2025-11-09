@@ -7,7 +7,7 @@ tasks:
 
   # Test tasks
   test:
-    desc: Run all tests (Python packages and backend)
+    desc: Run all tests (packages and backend - no frontend tests needed for static HTML)
     cmds:
       - uv run pytest packages/pdf-reader/tests/ packages/xlsx-reader/tests/ apps/backend/tests/ -v
 
@@ -50,27 +50,14 @@ tasks:
     cmds:
       - uv run pytest -v
 
-  # Frontend tasks (npm-based)
-  frontend:install:
-    desc: Install frontend dependencies
-    dir: apps/frontend
-    cmds:
-      - npm install
-
+  # Frontend tasks (static HTML)
   frontend:dev:
-    desc: Run frontend dev server
+    desc: Serve static HTML frontend with Python
     dir: apps/frontend
     cmds:
-      - npm run dev
+      - python3 -m http.server 8080
 
-  frontend:build:
-    desc: Build frontend for production
-    dir: apps/frontend
+  frontend:open:
+    desc: Open frontend in default browser
     cmds:
-      - npm run build
-
-  frontend:test:
-    desc: Run frontend tests
-    dir: apps/frontend
-    cmds:
-      - npm run test
+      - python3 -c "import webbrowser; webbrowser.open('http://localhost:8080')"

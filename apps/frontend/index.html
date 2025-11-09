@@ -1,12 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frontend App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code Features Showcase</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Datastar -->
+    <script type="module" defer src="https://cdn.jsdelivr.net/npm/@sudodevnull/datastar"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">Claude Code Features Showcase</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="demo.html" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Demo</a>
+                    <a href="about.html" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Welcome to Claude Code Features</h2>
+            <p class="text-xl text-gray-600 mb-8">A comprehensive showcase of advanced Claude Code capabilities</p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Feature Card 1 -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="text-blue-600 text-3xl mb-4">⚡</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Custom Commands</h3>
+                <p class="text-gray-600">Slash commands for analyze, refactor, test, and docs generation</p>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="text-green-600 text-3xl mb-4">🎯</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Skills</h3>
+                <p class="text-gray-600">Specialized skills for code review, PDF/XLSX reading, and testing</p>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="text-purple-600 text-3xl mb-4">🔧</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Hooks</h3>
+                <p class="text-gray-600">Auto-formatting and pre-commit validation hooks</p>
+            </div>
+
+            <!-- Feature Card 4 -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="text-red-600 text-3xl mb-4">📚</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Documentation</h3>
+                <p class="text-gray-600">Guides for models, file formats, workflows, and context management</p>
+            </div>
+
+            <!-- Feature Card 5 -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="text-yellow-600 text-3xl mb-4">📦</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Packages</h3>
+                <p class="text-gray-600">PDF and XLSX reader libraries with comprehensive tests</p>
+            </div>
+
+            <!-- Feature Card 6 -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="text-indigo-600 text-3xl mb-4">🚀</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Applications</h3>
+                <p class="text-gray-600">FastAPI backend with HTML/Datastar frontend</p>
+            </div>
+        </div>
+
+        <!-- Interactive Counter Demo with Datastar -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-12" data-store='{"count": 0}'>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Interactive Counter Demo</h3>
+            <p class="text-gray-600 mb-6">This counter uses Datastar for reactive updates (no build step required!)</p>
+
+            <div class="flex items-center space-x-4">
+                <button
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+                    data-on-click="$count--">
+                    Decrement
+                </button>
+
+                <div class="text-4xl font-bold text-gray-900 min-w-[100px] text-center" data-text="$count">0</div>
+
+                <button
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+                    data-on-click="$count++">
+                    Increment
+                </button>
+
+                <button
+                    class="bg-gray-600 hover:bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+                    data-on-click="$count = 0">
+                    Reset
+                </button>
+            </div>
+        </div>
+
+        <!-- Repository Stats -->
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg p-8 text-white">
+            <h3 class="text-2xl font-bold mb-6">Repository Stats</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">4</div>
+                    <div class="text-blue-100">Slash Commands</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">4</div>
+                    <div class="text-blue-100">Skills</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">40</div>
+                    <div class="text-blue-100">Tests Passing</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">2</div>
+                    <div class="text-blue-100">Packages</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <p class="text-center text-gray-500">
+                Built with ❤️ using Claude Code | Static HTML + Tailwind CSS + Datastar
+            </p>
+        </div>
+    </footer>
+</body>
 </html>

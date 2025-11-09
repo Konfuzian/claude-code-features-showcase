@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Claude Code Features</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Datastar -->
+    <script type="module" defer src="https://cdn.jsdelivr.net/npm/@sudodevnull/datastar"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">Claude Code Features Showcase</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="demo.html" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Demo</a>
+                    <a href="about.html" class="bg-blue-100 text-blue-700 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">About This Project</h2>
+
+        <!-- Introduction -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Overview</h3>
+            <p class="text-gray-700 mb-4">
+                The Claude Code Features Showcase is a comprehensive learning resource and playground for
+                advanced Claude Code capabilities. It demonstrates practical implementations of custom commands,
+                skills, hooks, and modern web development patterns.
+            </p>
+            <p class="text-gray-700">
+                This project serves as both documentation and a working example of how to extend Claude Code's
+                functionality for enhanced productivity in software development workflows.
+            </p>
+        </div>
+
+        <!-- Architecture -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Project Architecture</h3>
+
+            <div class="space-y-4">
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">.claude/</h4>
+                    <p class="text-gray-700">
+                        Contains all Claude Code configurations including custom slash commands, skills,
+                        hooks, and settings. This is where the magic happens!
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">docs/</h4>
+                    <p class="text-gray-700">
+                        AI-focused documentation covering model selection, file formats, workflows,
+                        and context management strategies.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">packages/</h4>
+                    <p class="text-gray-700">
+                        Reusable Python libraries including PDF reader and XLSX reader packages,
+                        both with comprehensive test coverage.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">apps/</h4>
+                    <p class="text-gray-700">
+                        Deployable applications including a FastAPI backend and this static HTML frontend
+                        built with Tailwind CSS and Datastar.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Technology Stack</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Frontend</h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Static HTML</li>
+                        <li>Tailwind CSS (CDN)</li>
+                        <li>Datastar (Reactive UI)</li>
+                        <li>No build step required</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Backend</h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>FastAPI</li>
+                        <li>Jinja2 Templates</li>
+                        <li>Python 3.12+</li>
+                        <li>uv Package Manager</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Testing</h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>pytest</li>
+                        <li>Approval Tests</li>
+                        <li>httpx (API testing)</li>
+                        <li>40+ tests passing</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Development</h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Task (Task runner)</li>
+                        <li>ruff (Formatter/Linter)</li>
+                        <li>Git hooks</li>
+                        <li>Auto-formatting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Accordion -->
+        <div class="bg-white rounded-lg shadow-md p-8" data-store='{"openSection": null}'>
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Key Features</h3>
+
+            <div class="space-y-3">
+                <!-- Feature 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left font-semibold text-gray-900 bg-gray-50 hover:bg-gray-100 flex justify-between items-center"
+                        data-on-click="$openSection = $openSection === 1 ? null : 1">
+                        <span>Custom Slash Commands</span>
+                        <span data-text="$openSection === 1 ? '−' : '+'">+</span>
+                    </button>
+                    <div
+                        class="px-6 py-4 bg-white"
+                        data-bind-class="$openSection === 1 ? '' : 'hidden'">
+                        <p class="text-gray-700">
+                            Four custom commands (/analyze, /refactor, /test, /docs) that extend Claude Code
+                            functionality for code quality analysis, refactoring, test generation, and documentation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left font-semibold text-gray-900 bg-gray-50 hover:bg-gray-100 flex justify-between items-center"
+                        data-on-click="$openSection = $openSection === 2 ? null : 2">
+                        <span>Specialized Skills</span>
+                        <span data-text="$openSection === 2 ? '−' : '+'">+</span>
+                    </button>
+                    <div
+                        class="px-6 py-4 bg-white"
+                        data-bind-class="$openSection === 2 ? '' : 'hidden'">
+                        <p class="text-gray-700">
+                            Four specialized skills including code-reviewer for comprehensive code reviews,
+                            pdf-reader and xlsx-reader for document processing, and test-generator for creating
+                            comprehensive test suites.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left font-semibold text-gray-900 bg-gray-50 hover:bg-gray-100 flex justify-between items-center"
+                        data-on-click="$openSection = $openSection === 3 ? null : 3">
+                        <span>Automated Hooks</span>
+                        <span data-text="$openSection === 3 ? '−' : '+'">+</span>
+                    </button>
+                    <div
+                        class="px-6 py-4 bg-white"
+                        data-bind-class="$openSection === 3 ? '' : 'hidden'">
+                        <p class="text-gray-700">
+                            Post-tool-use hooks for automatic code formatting and Git pre-commit hooks for
+                            validation, ensuring code quality and consistency without manual intervention.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left font-semibold text-gray-900 bg-gray-50 hover:bg-gray-100 flex justify-between items-center"
+                        data-on-click="$openSection = $openSection === 4 ? null : 4">
+                        <span>Zero-Build Frontend</span>
+                        <span data-text="$openSection === 4 ? '−' : '+'">+</span>
+                    </button>
+                    <div
+                        class="px-6 py-4 bg-white"
+                        data-bind-class="$openSection === 4 ? '' : 'hidden'">
+                        <p class="text-gray-700">
+                            This frontend demonstrates a modern approach to web development using static HTML,
+                            Tailwind CSS, and Datastar - no build step, no npm packages, just pure simplicity
+                            with reactive interactivity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <p class="text-center text-gray-500">
+                Built with ❤️ using Claude Code | Static HTML + Tailwind CSS + Datastar
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
