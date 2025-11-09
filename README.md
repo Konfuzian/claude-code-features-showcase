@@ -34,7 +34,7 @@ This project is organized as a monorepo with three main areas:
 ## Key Features
 
 - **Custom Commands** - Slash commands for common tasks (/x-analyze, /x-test, /x-refactor, /x-docs, /x-commit, /x-test-coverage)
-- **Skills** - Reusable capabilities (code-reviewer, test-generator, pdf-reader, xlsx-reader)
+- **Skills** - Reusable capabilities (x-code-reviewer, x-test-generator, x-pdf-reader, x-xlsx-reader)
 - **Agents** - Specialized subagents (test-coverage-auditor)
 - **Hooks** - Automated formatting and validation
 - **Spec-Driven Development** - Write specs first, then implement
