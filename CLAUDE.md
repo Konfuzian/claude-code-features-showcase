@@ -54,7 +54,8 @@ This is a **monorepo** organized into AI-focused docs, applications, and shared 
 │   ├── models.md             # Model selection guide
 │   ├── file-formats.md       # .md vs .yml guidance
 │   ├── workflows.md          # Common patterns
-│   └── context-management.md
+│   ├── context-management.md # Token efficiency strategies
+│   └── code-style.md         # Code style & guidelines
 │
 ├── specs/                     # AI: Feature specifications
 │   ├── implemented/          # Completed features
@@ -69,21 +70,82 @@ This is a **monorepo** organized into AI-focused docs, applications, and shared 
 │   └── xlsx-reader/          # Excel data extraction
 │
 └── examples/                  # Working examples
+    ├── usage-guides/         # Feature usage documentation
+    ├── 01-spec-driven-development/
+    ├── 02-fix-security-issue/
+    ├── 03-add-feature/
+    └── 04-refactoring/
 ```
 
 ## Key Concepts
 
 ### Slash Commands
-Custom commands that extend Claude Code functionality. Defined as markdown or YAML files in `.claude/commands/`.
+Custom commands that extend Claude Code functionality. Defined as markdown or YAML files in [.claude/commands/](.claude/commands/).
+
+**Available commands:**
+- [/x-analyze](.claude/commands/x-analyze.md) - Code quality analysis
+- [/x-test](.claude/commands/x-test.md) - Generate tests
+- [/x-docs](.claude/commands/x-docs.md) - Generate documentation
+- [/x-refactor](.claude/commands/x-refactor.md) - Refactor code
+- [/x-test-coverage](.claude/commands/x-test-coverage.md) - Coverage analysis
+- [/x-commit](.claude/commands/x-commit.md) - Auto-commit
+
+[→ Usage guides](examples/usage-guides/commands/)
 
 ### Skills
-Reusable capabilities that can be invoked within conversations. Stored in `.claude/skills/`.
+Reusable capabilities that can be invoked within conversations. Stored in [.claude/skills/](.claude/skills/).
+
+**Available skills:**
+- [x-pdf-reader](.claude/skills/x-pdf-reader/) - Extract text from PDFs
+- [x-xlsx-reader](.claude/skills/x-xlsx-reader/) - Read Excel files
+- [x-code-reviewer](.claude/skills/x-code-reviewer/) - Comprehensive code reviews
+- [x-test-generator](.claude/skills/x-test-generator/) - Generate test suites
+
+[→ Usage guides](examples/usage-guides/skills/)
 
 ### Hooks
-Event-driven automation that responds to specific actions (e.g., before commit, after file save).
+Event-driven automation that responds to specific actions. Configured in [.claude/hooks.json](.claude/hooks.json).
+
+**Available hooks:**
+- [Pre-commit hook](.claude/hooks/pre-commit.sh) - Validates TODOs, markdown, whitespace
+- [Format hook](.claude/hooks/format-file.sh) - Auto-formats Python, Markdown, JSON, YAML
+
+[→ Hook documentation](.claude/hooks/README.md) | [→ Usage guides](examples/usage-guides/hooks/)
+
+### Agents
+Specialized subagents for complex autonomous tasks. Stored in [.claude/agents/](.claude/agents/).
+
+**Available agents:**
+- [test-coverage-auditor](.claude/agents/test-coverage-auditor.md) - Comprehensive coverage analysis
 
 ### MCP Servers
 Model Context Protocol servers that provide additional tools and context to Claude.
 
+[→ MCP configuration](.claude/mcp-servers/) (if configured)
+
 ### Context Management
 Strategies for efficient token usage and maintaining relevant context throughout sessions.
+
+[→ Context management guide](docs/context-management.md)
+
+---
+
+## Quick Reference
+
+### Documentation
+- [Code Style Guide](docs/code-style.md) - Conventions and best practices
+- [Workflows](docs/workflows.md) - Common development patterns
+- [Model Selection](docs/models.md) - Choosing the right model
+- [File Formats](docs/file-formats.md) - When to use .md vs .yml
+- [Context Management](docs/context-management.md) - Token efficiency
+
+### Examples
+- [Usage Guides](examples/usage-guides/) - How to use commands, skills, hooks
+- [Workflow Examples](examples/) - Real-world development scenarios
+- [Specifications](specs/) - Feature specs (implemented & planned)
+
+### Configuration
+- [Commands](.claude/commands/) - Custom slash commands
+- [Skills](.claude/skills/) - Reusable capabilities
+- [Hooks](.claude/hooks/) - Event-driven automation
+- [Agents](.claude/agents/) - Specialized subagents
