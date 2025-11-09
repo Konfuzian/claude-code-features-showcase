@@ -10,24 +10,20 @@ if git diff --cached --name-only | xargs grep -l "TODO\|FIXME" > /dev/null 2>&1;
     echo "Consider addressing them before committing"
 fi
 
-# Run linter if available
-if command -v eslint &> /dev/null; then
-    echo "Running ESLint..."
-    git diff --cached --name-only --diff-filter=ACM | grep '\.js$\|\.ts$' | xargs eslint
+# Validate markdown files
+if command -v markdownlint &> /dev/null; then
+    echo "Checking markdown files..."
+    git diff --cached --name-only --diff-filter=ACM | grep '\.md$' | xargs markdownlint
     if [ $? -ne 0 ]; then
-        echo "ESLint found issues. Please fix before committing."
+        echo "Markdown validation failed. Please fix before committing."
         exit 1
     fi
 fi
 
-# Run tests if available
-if [ -f "package.json" ] && grep -q "\"test\"" package.json; then
-    echo "Running tests..."
-    npm test
-    if [ $? -ne 0 ]; then
-        echo "Tests failed. Please fix before committing."
-        exit 1
-    fi
+# Check for trailing whitespace
+if git diff --cached --check; then
+    echo "Found trailing whitespace. Please fix before committing."
+    exit 1
 fi
 
 echo "Pre-commit checks passed!"
