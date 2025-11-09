@@ -146,8 +146,8 @@
                         <span data-bind-text="$openSection === 1 ? '−' : '+'">+</span>
                     </button>
                     <div
-                        class="px-6 py-4 bg-white"
-                        data-bind-class="$openSection === 1 ? '' : 'hidden'">
+                        class="px-6 py-4 bg-white hidden"
+                        data-bind-class.hidden="$openSection !== 1">
                         <p class="text-gray-700">
                             Six slash commands (/x-analyze, /x-test, /x-docs, /x-refactor, /x-commit, /x-test-coverage)
                             that extend Claude Code functionality for code quality analysis, testing, documentation,
@@ -165,8 +165,8 @@
                         <span data-bind-text="$openSection === 2 ? '−' : '+'">+</span>
                     </button>
                     <div
-                        class="px-6 py-4 bg-white"
-                        data-bind-class="$openSection === 2 ? '' : 'hidden'">
+                        class="px-6 py-4 bg-white hidden"
+                        data-bind-class.hidden="$openSection !== 2">
                         <p class="text-gray-700">
                             Four specialized skills (x-code-reviewer, x-test-generator, x-pdf-reader, x-xlsx-reader)
                             for comprehensive code reviews, test generation, PDF text extraction, and Excel data processing.
@@ -184,8 +184,8 @@
                         <span data-bind-text="$openSection === 3 ? '−' : '+'">+</span>
                     </button>
                     <div
-                        class="px-6 py-4 bg-white"
-                        data-bind-class="$openSection === 3 ? '' : 'hidden'">
+                        class="px-6 py-4 bg-white hidden"
+                        data-bind-class.hidden="$openSection !== 3">
                         <p class="text-gray-700">
                             Post-tool-use hooks for automatic code formatting and Git pre-commit hooks for
                             validation, ensuring code quality and consistency without manual intervention.
@@ -202,8 +202,8 @@
                         <span data-bind-text="$openSection === 4 ? '−' : '+'">+</span>
                     </button>
                     <div
-                        class="px-6 py-4 bg-white"
-                        data-bind-class="$openSection === 4 ? '' : 'hidden'">
+                        class="px-6 py-4 bg-white hidden"
+                        data-bind-class.hidden="$openSection !== 4">
                         <p class="text-gray-700">
                             This frontend demonstrates a modern approach to web development using static HTML,
                             Tailwind CSS, and Datastar - no build step, no npm packages, just pure simplicity
