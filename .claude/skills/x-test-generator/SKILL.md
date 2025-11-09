@@ -1,5 +1,5 @@
 ---
-name: test-generator
+name: x-test-generator
 description: Generates comprehensive test suites including unit tests, integration tests, edge cases, and mock data. Adapts to project testing frameworks (Jest, Pytest, JUnit, RSpec, Go). Use when creating tests for new functionality, improving test coverage, or generating test fixtures.
 ---
 

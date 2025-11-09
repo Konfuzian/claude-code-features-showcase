@@ -1,5 +1,5 @@
 ---
-name: pdf-reader
+name: x-pdf-reader
 description: Extracts text from PDF files, handles multi-page documents, preserves structure, and provides page-by-page content. Uses Python with pypdf library. Use when reading PDF documentation, extracting text from PDF reports, analyzing PDF content, or converting PDF to text format.
 allowed-tools: [Bash, Read]
 ---
