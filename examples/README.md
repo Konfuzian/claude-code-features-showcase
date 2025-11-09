@@ -329,6 +329,20 @@ Debug and fix the issue.
 
 ---
 
+## Usage Guides
+
+For detailed guides on using individual features:
+
+📚 **[Browse All Usage Guides →](./usage-guides/)**
+
+Quick links:
+- **Commands:** [/x-analyze](./usage-guides/commands/x-analyze.md) • [/x-test](./usage-guides/commands/x-test.md) • [/x-docs](./usage-guides/commands/x-docs.md) • [/x-refactor](./usage-guides/commands/x-refactor.md) • [/x-test-coverage](./usage-guides/commands/x-test-coverage.md) • [/x-commit](./usage-guides/commands/x-commit.md)
+- **Skills:** [x-pdf-reader](./usage-guides/skills/x-pdf-reader.md) • [x-xlsx-reader](./usage-guides/skills/x-xlsx-reader.md) • [x-code-reviewer](./usage-guides/skills/x-code-reviewer.md) • [x-test-generator](./usage-guides/skills/x-test-generator.md)
+- **Hooks:** [Pre-commit Hook](./usage-guides/hooks/pre-commit-hook.md) • [Format Hook](./usage-guides/hooks/format-hook.md)
+- **Advanced:** [Command Chaining](./usage-guides/advanced-workflows/command-chaining.md) • [Skill Combinations](./usage-guides/advanced-workflows/skill-combinations.md)
+
+---
+
 ## Additional Resources
 
 - [Project Documentation](../docs/)
