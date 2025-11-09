@@ -1,14 +1,14 @@
 # Frontend Tests
 
-This directory contains tests for the static HTML frontend.
+This directory contains tests for the static HTML frontend organized into three tiers.
 
-## Test Types
+## Test Tiers
 
-### Static HTML Tests (`test_html_pages.py`)
+### 1. Static HTML Tests (`test_html_pages.py`) - 51 tests
 - **Purpose**: Validate HTML structure, content, and static elements
-- **Dependencies**: pytest only
-- **Fast**: Runs in < 1 second
-- **CI-friendly**: No browser required
+- **Dependencies**: pytest only (no browser)
+- **Speed**: < 1 second
+- **When**: Always run with `task test`
 
 **Tests include:**
 - HTML structure validation
@@ -19,49 +19,53 @@ This directory contains tests for the static HTML frontend.
 
 **Run:**
 ```bash
-task test
-# or
-uv run pytest apps/frontend/tests/test_html_pages.py
+task test  # Includes these tests
 ```
 
-### End-to-End Tests (`test_e2e.py`)
-- **Purpose**: Test actual browser functionality and interactivity
-- **Dependencies**: Playwright + system browser dependencies
-- **Slower**: Runs in ~10-30 seconds
-- **Requires**: Running web server at http://localhost:8080
+### 2. Sanity Tests (`test_sanity.py`) - 9 tests
+- **Purpose**: Quick browser checks that pages load and basic features work
+- **Dependencies**: Playwright + browser
+- **Speed**: ~5-10 seconds
+- **When**: Part of standard test suite
 
 **Tests include:**
-- Interactive counter functionality
-- Todo list add/remove operations
-- Accordion toggle behavior
-- Tab switching
-- Form validation
-- Navigation between pages
-- Keyboard accessibility
-- Responsive design
-
-**Setup:**
-```bash
-# Install Playwright system dependencies (one-time)
-uv run playwright install-deps
-
-# Or manually install required libraries
-sudo apt-get install libnspr4 libnss3 libasound2t64
-
-# Start the web server
-python3 -m http.server 8080 --directory apps/frontend
-```
+- Pages load without console errors
+- Page titles are correct
+- Navigation between pages works
+- Counter buttons work
+- Accordion toggles
 
 **Run:**
 ```bash
-# Run all E2E tests (headless)
-uv run pytest apps/frontend/tests/test_e2e.py
+# Local (requires browser deps)
+task test:sanity
 
-# Run with visible browser
-uv run pytest apps/frontend/tests/test_e2e.py --headed
+# Docker (no system deps needed)
+task test:sanity:docker
+```
 
-# Run specific test class
-uv run pytest apps/frontend/tests/test_e2e.py::TestAboutPageE2E
+### 3. End-to-End Tests (`test_e2e.py`) - 27 tests
+- **Purpose**: Comprehensive browser testing of all interactive features
+- **Dependencies**: Playwright + browser
+- **Speed**: ~30-60 seconds
+- **When**: Opt-in only (not part of default `task test`)
+
+**Tests include:**
+- All sanity checks plus:
+- Detailed interactive element testing
+- Form validation behavior
+- Tab switching logic
+- Keyboard accessibility
+- Responsive design verification
+- Cross-page navigation flows
+
+**Run:**
+```bash
+# Local (requires browser deps)
+task test:e2e
+
+# Docker (no system deps needed)
+task test:e2e:docker
 ```
 
 ## Test Organization
