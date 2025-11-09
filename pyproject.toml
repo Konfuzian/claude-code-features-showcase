@@ -1,0 +1,34 @@
+[project]
+name = "claude-code-features"
+version = "0.1.0"
+description = "Claude Code features showcase"
+requires-python = ">=3.10"
+dependencies = [
+    "pypdf>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "approvaltests>=12.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pdf_reader"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "approvaltests>=12.0.0",
+    "reportlab>=4.4.4",
+]

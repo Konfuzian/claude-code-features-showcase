@@ -17,14 +17,22 @@ All notable changes to this project will be documented in this file.
 - Added example skills:
   - `code-reviewer.md` - Code review skill
   - `test-generator.md` - Test generation skill
+  - `pdf-reader.md` - PDF text extraction skill
 - Added example hooks:
-  - `pre-commit.sh` - Pre-commit validation
+  - `pre-commit.sh` - Pre-commit validation (updated for markdown)
   - `README.md` - Hook documentation
 - Created comprehensive documentation:
   - `docs/models.md` - Model selection guide
   - `docs/file-formats.md` - .md vs .yml guidance
   - `docs/workflows.md` - Common development patterns
   - `docs/context-management.md` - Token usage strategies
+- Implemented PDF reader functionality:
+  - Python project setup with uv package manager
+  - `pyproject.toml` with dependencies (pypdf)
+  - `src/pdf_reader/` module with text extraction
+  - `tests/` with pytest and approval tests
+  - Sample PDF fixture for testing
+  - `.gitignore` for Python/testing artifacts
 
 #### Changed
 - Restructured README.md with proper markdown hierarchy

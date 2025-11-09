@@ -1,0 +1,17 @@
+=== Page 1 (186 chars) ===
+Claude Code Features Showcase
+This is a sample PDF document for testing the PDF reader skill.
+Features demonstrated:
+- Text extraction
+- Multi-page handling
+- Python integration with uv
+
+
+=== Page 2 (222 chars) ===
+Page 2: Testing Data
+This page contains additional content to test multi-page extraction.
+The PDF reader should be able to:
+1. Extract text from all pages
+2. Preserve document structure
+3. Handle different fonts and sizes
+
