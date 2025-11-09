@@ -1,0 +1,21 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default: task --list
+
+  test:
+    desc: Run the test suite with pytest
+    cmds:
+      - uv run pytest tests/ -v
+
+  test:watch:
+    desc: Run tests in watch mode
+    cmds:
+      - uv run pytest tests/ -v --looponfail
+
+  test:coverage:
+    desc: Run tests with coverage report
+    cmds:
+      - uv run pytest tests/ -v --cov=src --cov-report=html --cov-report=term
