@@ -6,6 +6,19 @@ resolution-markers = [
     "python_full_version < '3.11'",
 ]
 
+[manifest]
+members = [
+    "pdf-reader",
+    "xlsx-reader",
+]
+
+[manifest.dependency-groups]
+dev = [
+    { name = "pytest", specifier = ">=8.0.0" },
+    { name = "pytest-watcher", specifier = ">=0.4.3" },
+    { name = "ruff", specifier = ">=0.14.4" },
+]
+
 [[package]]
 name = "allpairspy"
 version = "2.5.1"
@@ -157,48 +170,6 @@ wheels = [
 ]
 
 [[package]]
-name = "claude-code-features"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "openpyxl" },
-    { name = "pypdf" },
-]
-
-[package.optional-dependencies]
-dev = [
-    { name = "approvaltests" },
-    { name = "pytest" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "approvaltests" },
-    { name = "pytest" },
-    { name = "pytest-watcher" },
-    { name = "reportlab" },
-    { name = "ruff" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "approvaltests", marker = "extra == 'dev'", specifier = ">=12.0.0" },
-    { name = "openpyxl", specifier = ">=3.1.5" },
-    { name = "pypdf", specifier = ">=4.0.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0.0" },
-]
-provides-extras = ["dev"]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "approvaltests", specifier = ">=12.0.0" },
-    { name = "pytest", specifier = ">=8.0.0" },
-    { name = "pytest-watcher", specifier = ">=0.4.3" },
-    { name = "reportlab", specifier = ">=4.4.4" },
-    { name = "ruff", specifier = ">=0.14.4" },
-]
-
-[[package]]
 name = "colorama"
 version = "0.4.6"
 source = { registry = "https://pypi.org/simple" }
@@ -286,6 +257,31 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz", hash = "sha256:d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f", size = 165727, upload-time = "2025-04-19T11:48:59.673Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl", hash = "sha256:29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484", size = 66469, upload-time = "2025-04-19T11:48:57.875Z" },
+]
+
+[[package]]
+name = "pdf-reader"
+version = "0.1.0"
+source = { editable = "packages/pdf-reader" }
+dependencies = [
+    { name = "pypdf" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "approvaltests" },
+    { name = "pytest" },
+    { name = "reportlab" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "pypdf", specifier = ">=4.0.0" }]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "approvaltests", specifier = ">=12.0.0" },
+    { name = "pytest", specifier = ">=8.0.0" },
+    { name = "reportlab", specifier = ">=4.4.4" },
 ]
 
 [[package]]
@@ -640,4 +636,27 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/07/f6/d0e5b343768e8bcb4cda79f0f2f55051bf26177ecd5651f84c07567461cf/watchdog-6.0.0-py3-none-win32.whl", hash = "sha256:07df1fdd701c5d4c8e55ef6cf55b8f0120fe1aef7ef39a1c6fc6bc2e606d517a", size = 79065, upload-time = "2024-11-01T14:07:09.525Z" },
     { url = "https://files.pythonhosted.org/packages/db/d9/c495884c6e548fce18a8f40568ff120bc3a4b7b99813081c8ac0c936fa64/watchdog-6.0.0-py3-none-win_amd64.whl", hash = "sha256:cbafb470cf848d93b5d013e2ecb245d4aa1c8fd0504e863ccefa32445359d680", size = 79070, upload-time = "2024-11-01T14:07:10.686Z" },
     { url = "https://files.pythonhosted.org/packages/33/e8/e40370e6d74ddba47f002a32919d91310d6074130fe4e17dabcafc15cbf1/watchdog-6.0.0-py3-none-win_ia64.whl", hash = "sha256:a1914259fa9e1454315171103c6a30961236f508b9b623eae470268bbcc6a22f", size = 79067, upload-time = "2024-11-01T14:07:11.845Z" },
+]
+
+[[package]]
+name = "xlsx-reader"
+version = "0.1.0"
+source = { editable = "packages/xlsx-reader" }
+dependencies = [
+    { name = "openpyxl" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "approvaltests" },
+    { name = "pytest" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "openpyxl", specifier = ">=3.1.5" }]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "approvaltests", specifier = ">=12.0.0" },
+    { name = "pytest", specifier = ">=8.0.0" },
 ]
