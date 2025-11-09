@@ -34,7 +34,7 @@ This project is organized as a monorepo with three main areas:
 ## Key Features
 
 - **Custom Commands** - Slash commands for common tasks (/analyze, /test, /refactor, /docs, /commit)
-- **Skills** - Reusable capabilities (code-reviewer, test-generator, test-coverage-auditor, pdf-reader, xlsx-reader)
+- **Skills** - Reusable capabilities (code-reviewer, test-generator, pdf-reader, xlsx-reader)
 - **Hooks** - Automated formatting and validation
 - **Spec-Driven Development** - Write specs first, then implement
 - **Comprehensive Testing** - pytest with approval tests
