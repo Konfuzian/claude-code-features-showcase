@@ -1,4 +1,8 @@
-"""End-to-end tests for frontend pages using Playwright."""
+"""Comprehensive end-to-end tests for frontend pages using Playwright.
+
+These tests are more comprehensive and slower than sanity checks.
+Run with: task test:e2e or pytest -m e2e
+"""
 
 import re
 from pathlib import Path
@@ -8,6 +12,9 @@ from playwright.sync_api import Page, expect
 
 FRONTEND_DIR = Path(__file__).parent.parent
 BASE_URL = "http://localhost:8080"
+
+# Mark all tests in this file as e2e (not run by default)
+pytestmark = pytest.mark.e2e
 
 
 @pytest.fixture(scope="session")

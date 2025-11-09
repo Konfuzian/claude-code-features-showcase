@@ -1,0 +1,20 @@
+# Dockerfile for running E2E tests with Playwright
+FROM mcr.microsoft.com/playwright/python:v1.55.0-noble
+
+WORKDIR /app
+
+# Install uv
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+ENV PATH="/root/.local/bin:$PATH"
+
+# Copy project files
+COPY . /app/
+
+# Install Python dependencies
+RUN uv sync --dev
+
+# Expose port for frontend server
+EXPOSE 8080
+
+# Default command runs sanity tests
+CMD ["uv", "run", "pytest", "apps/frontend/tests/test_sanity.py", "-v"]

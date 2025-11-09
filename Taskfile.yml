@@ -42,6 +42,30 @@ tasks:
     cmds:
       - $HOME/.local/bin/uv run pytest apps/frontend/tests/ -v
 
+  test:e2e:
+    desc: Run comprehensive E2E tests (requires browser dependencies and running server)
+    cmds:
+      - echo "Make sure frontend server is running: task frontend:dev"
+      - $HOME/.local/bin/uv run pytest apps/frontend/tests/ -v -m e2e
+
+  test:e2e:docker:
+    desc: Run E2E tests in Docker with all dependencies
+    cmds:
+      - docker compose -f docker-compose.test.yml up --build --abort-on-container-exit
+      - docker compose -f docker-compose.test.yml down
+
+  test:sanity:
+    desc: Run quick sanity checks on frontend (requires running server)
+    cmds:
+      - echo "Make sure frontend server is running: task frontend:dev"
+      - $HOME/.local/bin/uv run pytest apps/frontend/tests/test_sanity.py -v
+
+  test:sanity:docker:
+    desc: Run sanity tests in Docker (no system dependencies needed)
+    cmds:
+      - docker compose -f docker-compose.test.yml up --build --abort-on-container-exit
+      - docker compose -f docker-compose.test.yml down
+
   test:backend:
     desc: Run backend tests only
     dir: apps/backend
@@ -60,9 +84,9 @@ tasks:
     desc: Serve static HTML frontend with Python
     dir: apps/frontend
     cmds:
-      - python3 -m http.server 8080
+      - $HOME/.local/bin/uv run python -m http.server 8080
 
   frontend:open:
     desc: Open frontend in default browser
     cmds:
-      - python3 -c "import webbrowser; webbrowser.open('http://localhost:8080')"
+      - $HOME/.local/bin/uv run python -c "import webbrowser; webbrowser.open('http://localhost:8080')"

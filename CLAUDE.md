@@ -12,6 +12,15 @@ A comprehensive learning resource and playground for Claude Code features, inclu
 
 ## Development Guidelines
 
+### Python & Dependencies
+- **ALWAYS use `uv` for running Python commands** - never use `python`, `python3`, or `pip` directly
+- Examples:
+  - ✅ `uv run pytest`
+  - ✅ `uv run python script.py`
+  - ✅ `uv sync` to install dependencies
+  - ❌ `python3 -m pytest`
+  - ❌ `pip install package`
+
 ### Code Quality
 - Write clear, self-documenting code
 - Follow existing patterns and conventions
@@ -19,9 +28,11 @@ A comprehensive learning resource and playground for Claude Code features, inclu
 - Add inline comments for complex logic
 
 ### Testing
-- Run test suite after code changes
+- Run test suite after code changes: `task test`
 - Fix failing tests before committing
 - Add tests for new functionality
+- Use sanity checks for basic browser tests: `task test:sanity`
+- Use comprehensive E2E tests for thorough testing: `task test:e2e`
 
 ### Git Workflow
 - Commit after each meaningful step
