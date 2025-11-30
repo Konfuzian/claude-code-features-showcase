@@ -82,3 +82,7 @@ Learn how to work with Claude on this project through real-world examples:
 - **[Refactoring](examples/04-refactoring/)** - Improve code quality (e.g., remove duplication)
 
 Each example includes step-by-step workflows, prompts, and best practices.
+
+## TODOs
+
+TODO: tdd - https://alexop.dev/posts/custom-tdd-workflow-claude-code-vue/
