@@ -1,3 +1,7 @@
+---
+name: test-coverage-auditor
+---
+
 # Test Coverage Auditor Agent
 
 Specialized agent for comprehensive test coverage analysis across unit, integration, and end-to-end tests.
